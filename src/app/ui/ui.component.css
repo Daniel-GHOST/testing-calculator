@@ -34,3 +34,23 @@
     color: green;
 }
 
+.multiplication-button{
+  cursor: pointer;
+  color:blueviolet;
+}
+.division-button{
+  font-size: 22px;
+  font-weight:800;
+  cursor: pointer;
+  color:crimson;
+}
+
+.exponent-button{
+  cursor: pointer;
+  color: darkmagenta;
+}
+
+.sqr-button{
+  cursor: pointer;
+  color: darkgoldenrod;
+}
