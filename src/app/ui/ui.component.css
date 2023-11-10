@@ -34,3 +34,7 @@
     color: green;
 }
 
+.multiplication-button{
+  cursor: pointer;
+  color:blueviolet;
+}
