@@ -47,3 +47,4 @@ describe('addition unit test', () => {
     expect(result).toBe(-2);
   })
 }
+);
