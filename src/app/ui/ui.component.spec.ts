@@ -140,6 +140,7 @@ describe('Ui Addition - Component', () => {
     // Assert
     expect(el.innerText).toContain("0");
   });
+
 /////////////////////////////////////////////////////////////////////
   ///Pruebas de multiplicacion
   it("Should call multiplication method", () => {
@@ -184,5 +185,49 @@ describe('Ui Addition - Component', () => {
     // Assert
     expect(el.innerText).toContain("25");
   });
-});
 
+/////////////////////////////////////////////////////////////////////
+  ///Pruebas de division
+  it("Should call division method", () => {
+    // Arrange
+    let result = 0;
+    component.operator1 = 2;
+    component.operator2 = 2;
+
+    // Act
+    component.division();
+    result = component.result;
+
+    // Assert
+    expect(result).toBe(1);
+  });
+
+  it("shuld division operator1 and operator2 when i click the division button ", () => {
+    // Arrange
+    component.operator1 = 5.0;
+    component.operator2 = 2.5;
+    let multButton = fixture.debugElement.query(By.css(".division-button"));
+
+    // Act
+    multButton.triggerEventHandler("click", null);
+
+    // Assert
+    expect(component.result).toBe(2);
+  });
+
+  it("Should render division in result div", () => {
+    // Arrange
+    component.operator1 = 5;
+    component.operator2 = 5;
+
+    // Act
+    component.division();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css(".result"));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain("1");
+  });
+});
