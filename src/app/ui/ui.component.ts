@@ -36,5 +36,10 @@ export class UiComponent implements OnInit {
     let myresult = 0;
     myresult = multiplication(this.operator1, this.operator2);
     this.result = myresult;
-    }
+  }
+  division(){
+    let myresult = 0;
+    myresult = this.operator1 / this.operator2;
+    this.result = myresult;
+  }
 }
