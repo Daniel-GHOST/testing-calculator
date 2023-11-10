@@ -45,5 +45,6 @@ describe('addition unit test', () => {
     result = addition(0, -2);
     //Assert
     expect(result).toBe(-2);
-  })
-});
+  });
+}
+);
