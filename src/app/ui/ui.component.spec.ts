@@ -230,4 +230,48 @@ describe('Ui Addition - Component', () => {
     // Assert
     expect(el.innerText).toContain("1");
   });
+  /////////////////////////////////////////////////////////////////////
+  ///Pruebas de exponent
+  it("Should call exponent method", () => {
+    // Arrange
+    let result = 0;
+    component.operator1 = 2;
+    component.operator2 = 2;
+
+    // Act
+    component.exponent();
+    result = component.result;
+
+    // Assert
+    expect(result).toBe(4);
+  });
+
+  it("shuld exponent operator1 and operator2 when i click the exponent button ", () => {
+    // Arrange
+    component.operator1 = 5.0;
+    component.operator2 = 2.5;
+    let multButton = fixture.debugElement.query(By.css(".exponent-button"));
+
+    // Act
+    multButton.triggerEventHandler("click", null);
+
+    // Assert
+    expect(component.result).toBeCloseTo(55.90);
+  });
+
+  it("Should render exponent in result div", () => {
+    // Arrange
+    component.operator1 = 5;
+    component.operator2 = 5;
+
+    // Act
+    component.exponent();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css(".result"));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain("3125");
+  });
 });
