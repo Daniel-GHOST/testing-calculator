@@ -43,5 +43,9 @@
   font-weight:800;
   cursor: pointer;
   color:crimson;
+}
 
+.exponent-button{
+  cursor: pointer;
+  color: darkmagenta;
 }
